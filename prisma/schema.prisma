@@ -12,3 +12,14 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model RockBands {
+  id Int @id @default(autoincrement())
+  name String @unique
+  cityfundation String
+  members String
+  tour String?
+  bestsellingalbum String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
